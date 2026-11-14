@@ -1,0 +1,137 @@
+/* ---------- Animaciones de iconos de KeyApp ---------- */
+.ic { flex: none; overflow: visible; vertical-align: -0.2em; }
+.ic * { transform-box: fill-box; }
+
+/* Disparadores: el icono mismo o cualquier padre con .kp-anim */
+@keyframes kp-float   { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
+@keyframes kp-wiggle  { 0%,100% { transform: rotate(0) } 25% { transform: rotate(-14deg) } 75% { transform: rotate(14deg) } }
+@keyframes kp-key-turn{ 0%,100% { transform: rotate(0) } 40% { transform: rotate(-32deg) } 70% { transform: rotate(10deg) } }
+@keyframes kp-shackle { 0%,100% { transform: translateY(0) rotate(0) } 50% { transform: translateY(-3px) rotate(-16deg) } }
+@keyframes kp-shackle-hold { 0%,40% { transform: translateY(0) rotate(0) } 55%,85% { transform: translateY(-3px) rotate(-18deg) } 100% { transform: translateY(0) rotate(0) } }
+@keyframes kp-door    { 0%,100% { transform: scaleX(1) } 50% { transform: scaleX(.3) } }
+@keyframes kp-bar     { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(.45) } }
+@keyframes kp-ping    { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.7); opacity: .55 } }
+@keyframes kp-wave    { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+@keyframes kp-spin    { to { transform: rotate(360deg) } }
+@keyframes kp-nudge-r { 0%,100% { transform: translateX(0) } 50% { transform: translateX(3px) } }
+@keyframes kp-nudge-l { 0%,100% { transform: translateX(0) } 50% { transform: translateX(-3px) } }
+@keyframes kp-draw    { from { stroke-dasharray: 24; stroke-dashoffset: 24 } to { stroke-dasharray: 24; stroke-dashoffset: 0 } }
+
+/* ----- Llave ----- */
+.ic-key-g { transform-origin: 7.5px 15.5px; transform-box: view-box; }
+.kp-anim:hover .ic--hover .ic-key-g, .ic--hover:hover .ic-key-g { animation: kp-key-turn .7s ease-in-out; }
+.ic--siempre .ic-key-g { animation: kp-key-turn 3.2s ease-in-out infinite; }
+
+/* ----- Candado ----- */
+.ic-shackle { transform-origin: 16px 11px; transform-box: view-box; transition: transform .35s cubic-bezier(.3,1.5,.5,1); }
+.kp-anim:hover .ic--hover .ic-shackle, .ic--hover:hover .ic-shackle { transform: translateY(-3px) rotate(-16deg); }
+.ic--siempre .ic-shackle { animation: kp-shackle-hold 4s ease-in-out infinite; }
+
+/* ----- Puerta ----- */
+.ic-door-inside { opacity: .14; }
+.ic-door-panel { transform-origin: 7.5px 13px; transform-box: view-box; transition: transform .45s cubic-bezier(.3,1.3,.5,1); }
+.kp-anim:hover .ic--hover .ic-door-panel, .ic--hover:hover .ic-door-panel { transform: scaleX(.3); }
+.ic--siempre .ic-door-panel { animation: kp-door 3.6s ease-in-out infinite; }
+
+/* ----- Calendario ----- */
+.ic-dot { transform-origin: center; }
+.kp-anim:hover .ic--hover .ic-dot, .ic--hover:hover .ic-dot { animation: kp-ping .9s ease-in-out infinite; }
+.ic--siempre .ic-dot { animation: kp-ping 2.2s ease-in-out infinite; }
+
+/* ----- Dashboard (barras) ----- */
+.ic-bar { transform-origin: bottom; }
+.kp-anim:hover .ic--hover .ic-bar, .ic--hover:hover .ic-bar { animation: kp-bar .8s ease-in-out; }
+.kp-anim:hover .ic--hover .b2, .ic--hover:hover .b2 { animation-delay: .1s; }
+.kp-anim:hover .ic--hover .b3, .ic--hover:hover .b3 { animation-delay: .2s; }
+.ic--siempre .ic-bar { animation: kp-bar 2.4s ease-in-out infinite; }
+.ic--siempre .b2 { animation-delay: .3s; } .ic--siempre .b3 { animation-delay: .6s; }
+
+/* ----- Más ----- */
+.ic-plus { transform-origin: center; transition: transform .4s cubic-bezier(.3,1.5,.5,1); }
+.kp-anim:hover .ic--hover .ic-plus, .ic--hover:hover .ic-plus { transform: rotate(90deg); }
+
+/* ----- X ----- */
+.ic-x { transform-origin: center; transition: transform .35s ease; }
+.kp-anim:hover .ic--hover .ic-x, .ic--hover:hover .ic-x { transform: rotate(90deg) scale(1.1); }
+
+/* ----- Usuarios ----- */
+.ic-user2 { transition: transform .35s ease; }
+.kp-anim:hover .ic--hover .ic-user2, .ic--hover:hover .ic-user2 { transform: translateX(2px); }
+
+/* ----- Aula (pizarra) ----- */
+.ic-line { stroke-dasharray: 10; stroke-dashoffset: 0; }
+.kp-anim:hover .ic--hover .ic-line, .ic--hover:hover .ic-line { animation: kp-draw .6s ease-out; }
+.kp-anim:hover .ic--hover .l2, .ic--hover:hover .l2 { animation-delay: .15s; }
+.ic--siempre .ic-line { animation: kp-draw 2.6s ease-in-out infinite alternate; }
+
+/* ----- Salir ----- */
+.ic-arrow { transition: transform .3s ease; }
+.kp-anim:hover .ic--hover .ic-arrow, .ic--hover:hover .ic-arrow { animation: kp-nudge-r .6s ease-in-out infinite; }
+
+/* ----- Buscar ----- */
+.ic-search-g { transform-origin: 11px 11px; transform-box: view-box; }
+.kp-anim:hover .ic--hover .ic-search-g, .ic--hover:hover .ic-search-g { animation: kp-wiggle .7s ease-in-out; }
+
+/* ----- Transferir ----- */
+.kp-anim:hover .ic--hover .ic-a1, .ic--hover:hover .ic-a1 { animation: kp-nudge-r .7s ease-in-out infinite; }
+.kp-anim:hover .ic--hover .ic-a2, .ic--hover:hover .ic-a2 { animation: kp-nudge-l .7s ease-in-out infinite; }
+.ic--siempre .ic-a1 { animation: kp-nudge-r 1.6s ease-in-out infinite; }
+.ic--siempre .ic-a2 { animation: kp-nudge-l 1.6s ease-in-out infinite; }
+
+/* ----- Check ----- */
+.ic-check { stroke-dasharray: 24; stroke-dashoffset: 0; }
+.kp-anim:hover .ic--hover .ic-check, .ic--hover:hover .ic-check, .ic--siempre .ic-check { animation: kp-draw .5s ease-out; }
+
+/* ----- Reloj ----- */
+.ic-hand { transform-origin: 12px 12px; transform-box: view-box; }
+.kp-anim:hover .ic--hover .ic-hand, .ic--hover:hover .ic-hand { animation: kp-spin 1s ease-in-out; }
+.ic--siempre .ic-hand { animation: kp-spin 6s linear infinite; }
+
+/* ----- Correo ----- */
+.ic-flap { transform-origin: center top; }
+.kp-anim:hover .ic--hover .ic-flap, .ic--hover:hover .ic-flap { animation: kp-wiggle .6s ease-in-out; }
+
+/* ----- Señal IoT ----- */
+.ic-wave { animation: kp-wave 1.8s ease-in-out infinite; }
+.ic-wave.w1 { animation-delay: .2s; }
+
+/* ----- Chat (puntos que saltan) ----- */
+@keyframes kp-dot { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-2.5px) } }
+.ic-d { transform-origin: center; }
+.kp-anim:hover .ic--hover .ic-d, .ic--hover:hover .ic-d { animation: kp-dot .6s ease-in-out infinite; }
+.kp-anim:hover .ic--hover .d2, .ic--hover:hover .d2 { animation-delay: .12s; }
+.kp-anim:hover .ic--hover .d3, .ic--hover:hover .d3 { animation-delay: .24s; }
+.ic--siempre .ic-d { animation: kp-dot 1.2s ease-in-out infinite; }
+.ic--siempre .d2 { animation-delay: .15s; } .ic--siempre .d3 { animation-delay: .3s; }
+
+/* ----- Enviar (avión) ----- */
+@keyframes kp-plane { 0%,100% { transform: translate(0,0) } 50% { transform: translate(3px,-3px) } }
+.kp-anim:hover .ic--hover .ic-plane, .ic--hover:hover .ic-plane { animation: kp-plane .6s ease-in-out infinite; }
+.ic--siempre .ic-plane { animation: kp-plane 1.4s ease-in-out infinite; }
+
+/* ----- Bandera (reportes) ----- */
+@keyframes kp-flag { 0%,100% { transform: skewY(0) } 50% { transform: skewY(8deg) } }
+.ic-flag { transform-origin: left center; }
+.kp-anim:hover .ic--hover .ic-flag, .ic--hover:hover .ic-flag { animation: kp-flag .5s ease-in-out infinite; }
+.ic--siempre .ic-flag { animation: kp-flag 1.6s ease-in-out infinite; }
+
+/* ----- Rayo (sin energía) ----- */
+@keyframes kp-bolt { 0%,100% { opacity: 1 } 45% { opacity: .25 } 55% { opacity: 1 } 70% { opacity: .4 } }
+.kp-anim:hover .ic--hover .ic-bolt, .ic--hover:hover .ic-bolt { animation: kp-bolt .7s linear; }
+.ic--siempre .ic-bolt { animation: kp-bolt 2.4s linear infinite; }
+
+/* ----- Llave inglesa (mantenimiento) ----- */
+.ic-wrench { transform-origin: 18px 18px; transform-box: view-box; }
+.kp-anim:hover .ic--hover .ic-wrench, .ic--hover:hover .ic-wrench { animation: kp-wiggle .7s ease-in-out; }
+.ic--siempre .ic-wrench { animation: kp-wiggle 2.4s ease-in-out infinite; }
+
+/* ----- Flotar (iconos decorativos y KPI) ----- */
+.ic--flotar { animation: kp-float 3.6s ease-in-out infinite; }
+.ic--giro { animation: kp-spin 1.4s linear infinite; }
+
+/* ----- Estático: nada se mueve ----- */
+.ic--no, .ic--no * { animation: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ic, .ic * { animation: none !important; transition: none !important; }
+}

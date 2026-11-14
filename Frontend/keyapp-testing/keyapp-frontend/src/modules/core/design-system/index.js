@@ -1,0 +1,5 @@
+export { default as EstadoBadge } from './EstadoBadge'
+export { default as Icono } from './Icono'
+export { default as EstadoVacio } from './EstadoVacio'
+export { default as Cargando } from './Cargando'
+export { default as EncabezadoPagina } from './EncabezadoPagina'

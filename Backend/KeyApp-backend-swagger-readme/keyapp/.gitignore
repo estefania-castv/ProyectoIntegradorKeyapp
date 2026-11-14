@@ -1,0 +1,13 @@
+# Compilado y dependencias
+target/
+.venv/
+node_modules/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Secretos locales
+.env
+*.local
